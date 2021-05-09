@@ -1,6 +1,7 @@
 package io.github.turskyi.onlineimages.data.api.datasource
 
 import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import io.github.turskyi.onlineimages.data.entities.PhotoResponse
 import io.github.turskyi.onlineimages.data.api.service.OnlineImagesApi
 import io.github.turskyi.onlineimages.data.entities.UnsplashResponse
@@ -37,5 +38,9 @@ class PhotoNetSource(
             // example: server error
             LoadResult.Error(exception)
         }
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, PhotoResponse>): Int? {
+        return state.anchorPosition
     }
 }
