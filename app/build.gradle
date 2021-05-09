@@ -48,7 +48,6 @@ dependencies {
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation 'com.google.android.material:material:1.4.0-beta01'
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
 
     // Navigation Component
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
