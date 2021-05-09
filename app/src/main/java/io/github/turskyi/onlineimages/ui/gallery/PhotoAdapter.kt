@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import io.github.turskyi.onlineimages.R
-import io.github.turskyi.onlineimages.data.api.PhotoResponse
+import io.github.turskyi.onlineimages.data.entities.PhotoResponse
 import io.github.turskyi.onlineimages.databinding.ItemPhotoBinding
 
 class PhotoAdapter(private val listener: OnItemClickListener) :
@@ -48,7 +48,7 @@ class PhotoAdapter(private val listener: OnItemClickListener) :
             binding.root.setOnClickListener {
                 val position: Int = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    val item:PhotoResponse? = getItem(position)
+                    val item: PhotoResponse? = getItem(position)
                     if (item != null) {
                         listener.onItemClick(item)
                     }

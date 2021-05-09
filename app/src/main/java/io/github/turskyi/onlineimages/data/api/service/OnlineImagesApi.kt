@@ -1,11 +1,12 @@
-package io.github.turskyi.onlineimages.data.api
+package io.github.turskyi.onlineimages.data.api.service
 
 import io.github.turskyi.onlineimages.BuildConfig.UNSPLASH_ACCESS_KEY
+import io.github.turskyi.onlineimages.data.entities.UnsplashResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
 
-interface UnsplashApi {
+interface OnlineImagesApi {
 
     companion object {
         const val BASE_URL = "https://api.unsplash.com/"

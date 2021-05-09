@@ -6,7 +6,7 @@ import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import io.github.turskyi.onlineimages.data.ImageRepository
-import io.github.turskyi.onlineimages.data.api.PhotoResponse
+import io.github.turskyi.onlineimages.data.entities.PhotoResponse
 
 class GalleryViewModel @ViewModelInject constructor(
     private val repository: ImageRepository,

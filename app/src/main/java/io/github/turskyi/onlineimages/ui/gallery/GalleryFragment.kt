@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.turskyi.onlineimages.R
-import io.github.turskyi.onlineimages.data.api.PhotoResponse
+import io.github.turskyi.onlineimages.data.entities.PhotoResponse
 import io.github.turskyi.onlineimages.databinding.FragmentGalleryBinding
 
 // We need to pass the layout into the constructor in order for to navigation will work

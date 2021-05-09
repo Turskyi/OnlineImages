@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
-import io.github.turskyi.onlineimages.data.api.UnsplashApi
+import io.github.turskyi.onlineimages.data.api.service.OnlineImagesApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -22,14 +22,14 @@ object AppModule {
     @Singleton
     fun provideRetrofit(): Retrofit =
         Retrofit.Builder()
-            .baseUrl(UnsplashApi.BASE_URL)
+            .baseUrl(OnlineImagesApi.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
     // since we already declared how to get retrofit we now can pass it as a parameter
     @Provides
     @Singleton
-    fun provideUnsplashApi(retrofit: Retrofit): UnsplashApi =
-        retrofit.create(UnsplashApi::class.java)
+    fun provideUnsplashApi(retrofit: Retrofit): OnlineImagesApi =
+        retrofit.create(OnlineImagesApi::class.java)
 
 }

@@ -1,4 +1,4 @@
-package io.github.turskyi.onlineimages.data.api
+package io.github.turskyi.onlineimages.data.entities
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
