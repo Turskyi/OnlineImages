@@ -8,14 +8,16 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import dagger.hilt.android.AndroidEntryPoint
 import io.github.turskyi.onlineimages.R
+import io.github.turskyi.onlineimages.data.api.PhotoResponse
 import io.github.turskyi.onlineimages.databinding.FragmentGalleryBinding
 
 // We need to pass the layout into the constructor in order for to navigation will work
 @AndroidEntryPoint
-class GalleryFragment : Fragment(R.layout.fragment_gallery) {
+class GalleryFragment : Fragment(R.layout.fragment_gallery),OnItemClickListener {
     private val viewModel by viewModels<GalleryViewModel>()
 
     private var _binding: FragmentGalleryBinding? = null
@@ -24,7 +26,7 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentGalleryBinding.bind(view)
-        val adapter = PhotoAdapter()
+        val adapter = PhotoAdapter(this)
         binding.apply {
             recyclerView.setHasFixedSize(true)
             // getting rid of redundant flashes during changing the search query
@@ -60,8 +62,13 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
                 }
             }
         }
-
         setHasOptionsMenu(true)
+    }
+
+
+    override fun onItemClick(photo: PhotoResponse) {
+        val action = GalleryFragmentDirections.actionGalleryFragmentToDetailsFragment(photo)
+        findNavController().navigate(action)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

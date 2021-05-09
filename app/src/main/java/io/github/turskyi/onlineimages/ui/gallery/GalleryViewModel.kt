@@ -1,5 +1,6 @@
 package io.github.turskyi.onlineimages.ui.gallery
 
+import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import androidx.paging.PagingData
@@ -8,13 +9,17 @@ import io.github.turskyi.onlineimages.data.ImageRepository
 import io.github.turskyi.onlineimages.data.api.PhotoResponse
 
 class GalleryViewModel @ViewModelInject constructor(
-    private val repository: ImageRepository
+    private val repository: ImageRepository,
+    // handling process death
+    @Assisted state: SavedStateHandle
 ) : ViewModel() {
     companion object {
-        private const val DEFAULT_QUERY = "cats"
+        private const val DEFAULT_QUERY = "all"
+        private const val CURRENT_QUERY = "current_query"
     }
 
-    private val currentQuery: MutableLiveData<String> = MutableLiveData(DEFAULT_QUERY)
+    private val currentQuery: MutableLiveData<String> =
+        state.getLiveData(CURRENT_QUERY, DEFAULT_QUERY)
 
     // "switchMap" allows us to swap data whenever "currentQuery.value" is changed
     val photos: LiveData<PagingData<PhotoResponse>> = currentQuery.switchMap { queryString ->

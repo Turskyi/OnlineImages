@@ -11,7 +11,7 @@ import io.github.turskyi.onlineimages.R
 import io.github.turskyi.onlineimages.data.api.PhotoResponse
 import io.github.turskyi.onlineimages.databinding.ItemPhotoBinding
 
-class PhotoAdapter :
+class PhotoAdapter(private val listener: OnItemClickListener) :
     PagingDataAdapter<PhotoResponse, PhotoAdapter.PhotoViewHolder>(PHOTO_COMPARATOR) {
     companion object {
         private val PHOTO_COMPARATOR = object : DiffUtil.ItemCallback<PhotoResponse>() {
@@ -41,8 +41,20 @@ class PhotoAdapter :
         }
     }
 
-    class PhotoViewHolder(private val binding: ItemPhotoBinding) :
+   inner class PhotoViewHolder(private val binding: ItemPhotoBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position: Int = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val item:PhotoResponse? = getItem(position)
+                    if (item != null) {
+                        listener.onItemClick(item)
+                    }
+                }
+            }
+        }
 
         fun bind(photo: PhotoResponse) {
             binding.apply {
