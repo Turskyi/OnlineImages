@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Online Images</string>
     <string name="content_description_image">image</string>
+    <string name="search">Search</string>
+    <string name="results_could_not_be_loaded">Results could not be loaded</string>
+    <string name="retry">Retry</string>
 </resources>
