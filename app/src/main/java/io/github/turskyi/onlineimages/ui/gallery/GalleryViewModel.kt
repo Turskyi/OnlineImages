@@ -1,7 +1,5 @@
 package io.github.turskyi.onlineimages.ui.gallery
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
@@ -14,7 +12,7 @@ import javax.inject.Inject
 class GalleryViewModel @Inject constructor(
     private val repository: ImageRepository,
     // handling process death
-    @Assisted state: SavedStateHandle
+    state: SavedStateHandle
 ) : ViewModel() {
     companion object {
         private const val DEFAULT_QUERY = "all"
