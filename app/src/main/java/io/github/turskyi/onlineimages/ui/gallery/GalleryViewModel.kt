@@ -5,10 +5,13 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.turskyi.onlineimages.data.ImageRepository
 import io.github.turskyi.onlineimages.data.entities.PhotoResponse
+import javax.inject.Inject
 
-class GalleryViewModel @ViewModelInject constructor(
+@HiltViewModel
+class GalleryViewModel @Inject constructor(
     private val repository: ImageRepository,
     // handling process death
     @Assisted state: SavedStateHandle
