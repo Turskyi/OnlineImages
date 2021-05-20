@@ -4,13 +4,13 @@ import androidx.lifecycle.*
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.turskyi.onlineimages.data.ImageRepository
+import io.github.turskyi.onlineimages.data.ImageRepositoryImpl
 import io.github.turskyi.onlineimages.data.entities.PhotoResponse
 import javax.inject.Inject
 
 @HiltViewModel
 class GalleryViewModel @Inject constructor(
-    private val repository: ImageRepository,
+    private val repository: ImageRepositoryImpl,
     // handling process death
     state: SavedStateHandle
 ) : ViewModel() {

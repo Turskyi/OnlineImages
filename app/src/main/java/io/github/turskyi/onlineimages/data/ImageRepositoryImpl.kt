@@ -9,7 +9,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ImageRepository @Inject constructor(private val onlineImagesApi: OnlineImagesApi) {
+class ImageRepositoryImpl @Inject constructor(private val onlineImagesApi: OnlineImagesApi) {
     fun getSearchResults(query: String) =
         Pager(
             config = PagingConfig(
