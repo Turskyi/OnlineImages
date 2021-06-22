@@ -3,8 +3,8 @@ package io.github.turskyi.onlineimages.data
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
-import io.github.turskyi.onlineimages.data.api.datasource.PhotoNetSource
-import io.github.turskyi.onlineimages.data.api.service.OnlineImagesApi
+import io.github.turskyi.onlineimages.data.network.datasource.PhotoNetSource
+import io.github.turskyi.onlineimages.data.network.service.OnlineImagesApi
 import javax.inject.Inject
 import javax.inject.Singleton
 

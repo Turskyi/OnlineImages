@@ -1,9 +1,9 @@
-package io.github.turskyi.onlineimages.data.api.datasource
+package io.github.turskyi.onlineimages.data.network.datasource
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import io.github.turskyi.onlineimages.data.entities.PhotoResponse
-import io.github.turskyi.onlineimages.data.api.service.OnlineImagesApi
+import io.github.turskyi.onlineimages.data.network.service.OnlineImagesApi
 import io.github.turskyi.onlineimages.data.entities.UnsplashResponse
 import retrofit2.HttpException
 import java.io.IOException

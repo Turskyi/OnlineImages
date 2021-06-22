@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import io.github.turskyi.onlineimages.data.api.service.OnlineImagesApi
+import io.github.turskyi.onlineimages.data.network.service.OnlineImagesApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
