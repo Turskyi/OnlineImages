@@ -3,7 +3,7 @@
     package="io.github.turskyi.onlineimages">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<!--    this permission is required by "glide" to reload image if internet was absent -->
+    <!--    this permission is required by "glide" to reload image if internet was absent -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineImages">
-        <activity android:name=".MainActivity">
+        <!-- android:exported should be set true for main activity, or it won't launch -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

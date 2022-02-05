@@ -1,3 +1,4 @@
+//file:noinspection GroovyAssignabilityCheck
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
@@ -9,7 +10,7 @@ plugins {
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
-    buildToolsVersion "30.0.3"
+    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
         applicationId "io.github.turskyi.onlineimages"
@@ -44,9 +45,8 @@ android {
 
 dependencies {
     // Default dependencies
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     implementation "androidx.core:core-ktx:$ktxVersion"
-    implementation "com.google.android.material:material:$appCompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
     implementation "androidx.appcompat:appcompat:$appCompatVersion"
 
     // Navigation Component
