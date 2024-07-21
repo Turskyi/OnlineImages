@@ -42,6 +42,10 @@ pagination.
 - **Glide**: Image loading library.
 - **Navigation**: `androidx.navigation:navigation-fragment-ktx`
   and `androidx.navigation:navigation-ui-ktx`.
+- Architectural pattern: [Monolith](https://en.wikipedia.org/wiki/Monolithic_application).
+- **Code Readability:** code is easily readable with no unnecessary blank lines, no unused variables
+  or methods, and no commented-out code, all variables, methods, and resource IDs are descriptively
+  named such that another developer reading the code can easily understand their function.
 
 ## Contributing
 
