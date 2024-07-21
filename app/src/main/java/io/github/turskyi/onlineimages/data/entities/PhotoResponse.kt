@@ -1,4 +1,5 @@
 package io.github.turskyi.onlineimages.data.entities
+
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
@@ -9,7 +10,7 @@ data class PhotoResponse(
     val urls: PhotoUrls,
     val user: UnsplashUser
 ) : Parcelable {
-// nested classes are added to the body of this data class because they belong to it logically
+    // Nested classes are added to the body of this data class because they belong to it logically.
     @Parcelize
     data class PhotoUrls(
         val raw: String,
@@ -24,9 +25,9 @@ data class PhotoResponse(
         val name: String,
         val username: String
     ) : Parcelable {
-/*        this attribute belongs to the body of this data class, because it is computed property,
-* which means that it is generated dynamically from another (username) value ,
-* and will be used for generating link to this particular "unsplash user" */
-        val attributionUrl get() = "https://unsplash.com/$username?utm_source=OnlineImages&utm_medium=referral"
+        /* This attribute belongs to the body of this data class, because it is computed property,
+        * which means that it is generated dynamically from another (username) value ,
+        * and will be used for generating link to this particular "unsplash user" */
+        val attributionUrl: String get() = "https://unsplash.com/$username?utm_source=OnlineImages&utm_medium=referral"
     }
 }

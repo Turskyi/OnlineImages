@@ -2,33 +2,33 @@
 buildscript {
     // Defining versions in a single place
     ext {
-        // Sdk and tools
+        // Sdk and tools.
         minSdkVersion = 21
-        targetSdkVersion = 30
-        compileSdkVersion = 31
+        targetSdkVersion = 34
+        compileSdkVersion = 34
         buildToolsVersion = "30.0.3"
 
-        // App dependencies
-        kotlinVersion = "1.6.10"
-        appCompatVersion = '1.4.1'
-        materialVersion = '1.5.0'
-        espressoVersion = '3.4.0'
-        glideVersion = '4.12.0'
+        // App dependencies.
+        kotlinVersion = "1.9.0"
+        appCompatVersion = '1.7.0'
+        materialVersion = '1.12.0'
+        espressoVersion = '3.6.1'
+        glideVersion = '4.15.1'
         hiltAndroidXVersion = '1.0.0'
         junitVersion = '4.13.2'
-        ktxVersion = '1.7.0'
-        pagingVersion = '3.1.0'
+        ktxVersion = '1.13.1'
+        pagingVersion = '3.3.0'
         retrofitVersion = '2.9.0'
-        testExtJunitVersion = '1.1.3'
-        navigationVersion = '2.5.0-alpha01'
-        hiltVersion = '2.40.5'
+        testExtJunitVersion = '1.2.1'
+        navigationVersion = '2.7.7'
+        hiltVersion = '2.48'
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.1'
+        classpath 'com.android.tools.build:gradle:8.5.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -45,6 +45,6 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }

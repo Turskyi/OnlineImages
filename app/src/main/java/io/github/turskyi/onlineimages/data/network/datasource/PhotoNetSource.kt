@@ -3,23 +3,23 @@ package io.github.turskyi.onlineimages.data.network.datasource
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import io.github.turskyi.onlineimages.data.entities.PhotoResponse
-import io.github.turskyi.onlineimages.data.network.service.OnlineImagesApi
 import io.github.turskyi.onlineimages.data.entities.UnsplashResponse
+import io.github.turskyi.onlineimages.data.network.service.OnlineImagesApi
 import retrofit2.HttpException
 import java.io.IOException
 
-/* we do not set this constant to the companion object of PhotoNetSource
+/* We do not set this constant to the companion object of PhotoNetSource
  because it does not belong to it */
 private const val STARTING_PAGE_INDEX = 1
 
-// query variable is available only at runtime so we cannot inject it with dagger
+// Query variable is available only at runtime so we cannot inject it with dagger.
 class PhotoNetSource(
     private val onlineImagesApi: OnlineImagesApi,
     private val query: String
 ) : PagingSource<Int, PhotoResponse>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, PhotoResponse> {
-        val position = params.key ?: STARTING_PAGE_INDEX
+        val position: Int = params.key ?: STARTING_PAGE_INDEX
 
         return try {
             val response: UnsplashResponse =
